@@ -14,8 +14,9 @@
 /*------------------------------------*\
     MAIN
 \*------------------------------------*/
-[role=main] {
+[role = main] {
     padding: 0 100px;
+    width: 95%;
 }
 
 /* global box-sizing */
@@ -71,6 +72,9 @@ input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
+hr{
+    display: none;
+}
 
 /*------------------------------------*\
     STRUCTURE
@@ -98,6 +102,7 @@ input:focus {
         width: 100%;
     }
 }
+
 /* logo */
 .logo {
 	text-align: center;
@@ -169,8 +174,8 @@ div.featuredImage {
 
 }
 /* footer */
-.footer {
-
+.footer{
+    clear: both;
 }
 
 /*------------------------------------*\
@@ -179,8 +184,8 @@ div.featuredImage {
 /**About Us**/
 h2 {
     color: #df7900;
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 25px;
+    font-size: 2.5rem;
     text-align: center;
     text-transform: uppercase;
     font-weight: normal;
@@ -210,6 +215,7 @@ div.photo:nth-child(even){
     -webkit-transform: rotate(10deg);
     -moz-transform: rotate(10deg);
     transform: rotate(10deg);
+    margin-top: -80px;
 }
 .polaroid{
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0, .25);
@@ -218,7 +224,33 @@ div.photo:nth-child(even){
     width: 100%;
     height: auto;
 }
-
+/*GRID*/
+[class*='grid']{
+    float: left;
+    position: relative;
+    padding: 0 20px 0 0;
+}
+.omega {
+    padding-right: 0;
+}
+.omega:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media only screen and (min-width: 768px){
+    .grid2-3{
+        width: 66.6%;
+        margin-top: 30px;
+    }
+    .grid1-3{
+        width: 33.3%;
+        margin-top: 30px;
+    }
+    /*.grid2-3 p{
+        text-align: justify;
+    }*/
+}
 /*------------------------------------*\
     IMAGES
 \*------------------------------------*/
