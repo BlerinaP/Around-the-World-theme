@@ -20,9 +20,40 @@ get_header(); ?>
                     'order' => 'ASC',
                     'orderby'=> 'title',
                 ); ?>
+                <ul>
                 <?php $tours = new WP_Query($args); while($tours->have_posts()): $tours->the_post(); ?>
-                    <h3><?php the_title(); ?></h3>
+                    <li>
+                        <div class="featured-tour">
+                            <?php the_post_thumbnail('featuredTour');?>
+                            <a href="<?php the_permalink();?>" class="more-info">
+                                <img src="<?php echo get_template_directory_uri();  ?>/img/moreinfo.png">
+                            </a>
+                        </div><!---feature tour-->
+                        <h3>
+                            <a href="<?php the_permalink();?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h3>
+
+                        <?php
+                        $format = 'd F, Y';
+                        $date = strtotime(get_field('leaving_date',false,false));
+                        $leavingDate = date_i18n($format, $date);
+
+                        $returningDate = strtotime(get_field('returning_date',false,false));
+                        $returningDate = date_i18n($format, $returningDate);
+                        ?>
+
+                        <div class="date-price">
+                            <p class="date"><?php echo $leavingDate . ' - ' . $returningDate ?></p>
+                            <p class="price"><?php the_field('price');?></p>
+                        </div>
+                        <div class="tour-description">
+                            <?php the_field('small_description'); ?>
+                        </div>
+                    </li>
                 <?php endwhile; wp_reset_postdata();?>
+                </ul>
 
                 <br class="clear">
 
