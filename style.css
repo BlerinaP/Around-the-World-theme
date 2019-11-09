@@ -82,7 +82,18 @@ input:focus {
 }
 /* header */
 .header {
-	background-color: rgba(0,0,0, .7);
+
+}
+.header .navcanvas{
+    background-color: rgba(0,0,0, .7);
+}
+@media only screen and (min-width: 768px){
+    .header .navcanvas{
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+    }
 }
 /* logo */
 .logo {
@@ -143,6 +154,12 @@ input:focus {
 		line-height: 73px;
 	}
 
+}
+div.featuredImage {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
 }
 /* sidebar */
 .sidebar {
