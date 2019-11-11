@@ -5,44 +5,47 @@
     <section>
 
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            <!-- post title -->
+            <h2><span><?php the_title(); ?></span></h2>
+            <!-- /post title -->
 
             <!-- article -->
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('grid2-3'); ?>>
 
                 <!-- post thumbnail -->
                 <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-                    </a>
+                    <?php the_post_thumbnail(); // Fullsize image for the single post ?>
                 <?php endif; ?>
                 <!-- /post thumbnail -->
 
-                <!-- post title -->
-                <h1>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                </h1>
-                <!-- /post title -->
+                    <?php
+                    $format = 'd F, Y';
+                    $date = strtotime(get_field('leaving_date',false,false));
+                    $leavingDate = date_i18n($format, $date);
 
-                <!-- post details -->
-                <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-                <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-                <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-                <!-- /post details -->
+                    $returningDate = strtotime(get_field('returning_date',false,false));
+                    $returningDate = date_i18n($format, $returningDate);
+                    ?>
+                <div class="tour-information">
+                    <p><strong>Leaving and Returning Date:</strong> <?php echo $leavingDate . ' - ' . $returningDate ?></p>
+                    <p><strong>Location for Departure:</strong> <?php the_field('location');?></p>
+                    <p><strong>Available Seats:</strong> <?php the_field('avaliable_seats');?></p>
+                    <p><strong>Price:</strong> <?php the_field('price');?></p>
+                </div>
+                <div class="itinerary">
+                    <h3>Travel Itinerary</h3>
+                    <?php the_field('travel_itinerary');?>
+                </div>
 
                 <?php the_content(); // Dynamic Content ?>
 
-                <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-                <p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
-
-                <p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
-
                 <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-                <?php comments_template(); ?>
 
             </article>
             <!-- /article -->
+            <aside class="grid1-3">
+                <h3>Gallery</h3>
+            </aside>
 
         <?php endwhile; ?>
 
@@ -61,7 +64,5 @@
     </section>
     <!-- /section -->
 </main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
