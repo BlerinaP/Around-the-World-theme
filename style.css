@@ -100,6 +100,7 @@ hr{
         left: 0;
         top: 20px;
         width: 100%;
+		z-index: 20;
     }
 }
 
@@ -164,10 +165,22 @@ hr{
 
 }
 div.featuredImage {
+	position: relative;
     height: 300px;
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+div.featuredImage:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(89, 122, 60, 0.35);
 }
 /* sidebar */
 .sidebar {
@@ -277,7 +290,43 @@ ul.tours li .tour-description ul li{
 	text-indent: -5px;
 	margin: 9;
 }
-
+/*Tour Section Single.php*/
+div.tour-information{
+	background-color: #e3e3e3;
+	border: 1px solid #c0c0c0;
+	margin-top: 20px;
+	padding: 20px;
+}
+div.tour-information p{
+	margin: 0 0 5px 0;
+	color: #494949;
+}
+div.tour-information p:last-child{
+	color: red;
+}
+div.itinerary h3{
+	font-size: 30px;
+	font-size: 3rem;
+	color: #df7900;
+	text-align: center;
+	font-weight: normal;
+}
+div.itinerary h2{
+	text-align: left;
+	background-image: none;
+	margin-bottom: 0;
+}
+div.itinerary p{
+	margin: 0;
+}
+.single-tour aside h3{
+	color: #df7900;
+	border-bottom: 2px solid #cccccc;
+	font-weight: normal;
+	font-size: 28px;
+	font-size: 2.8rem;
+	margin: 0;
+}
 /*GRID*/
 [class*='grid']{
     position: relative;
@@ -307,6 +356,7 @@ ul.tours li .tour-description ul li{
 	   width: 50%;
     }
 }
+
 /*------------------------------------*\
     IMAGES
 \*------------------------------------*/
