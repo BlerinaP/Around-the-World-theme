@@ -327,6 +327,20 @@ div.itinerary p{
 	font-size: 2.8rem;
 	margin: 0;
 }
+/**Gallery tours**/
+.gallery .gallery-item{
+    height: 100%;
+    width: auto;!important;
+    margin: 0 6px;
+}
+.gallery-item img{
+    border: none!important;
+    width: 100%;
+    height: 100px;
+}
+.gallery br{
+    display: none;
+}
 /*GRID*/
 [class*='grid']{
     position: relative;

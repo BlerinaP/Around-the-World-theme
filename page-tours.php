@@ -20,9 +20,9 @@ get_header(); ?>
                     'order' => 'ASC',
                     'orderby'=> 'title',
                 ); ?>
-                <ul>
+                <ul class="tours">
                 <?php $tours = new WP_Query($args); while($tours->have_posts()): $tours->the_post(); ?>
-                    <li>
+                    <li class="grid2-4">
                         <div class="featured-tour">
                             <?php the_post_thumbnail('featuredTour');?>
                             <a href="<?php the_permalink();?>" class="more-info">
@@ -44,7 +44,7 @@ get_header(); ?>
                         $returningDate = date_i18n($format, $returningDate);
                         ?>
 
-                        <div class="date-price">
+                        <div class="date-price clear">
                             <p class="date"><?php echo $leavingDate . ' - ' . $returningDate ?></p>
                             <p class="price"><?php the_field('price');?></p>
                         </div>

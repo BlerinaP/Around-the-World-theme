@@ -37,7 +37,6 @@
                     <?php the_field('travel_itinerary');?>
                 </div>
 
-                <?php the_content(); // Dynamic Content ?>
 
                 <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
@@ -45,6 +44,7 @@
             <!-- /article -->
             <aside class="grid1-3">
                 <h3>Gallery</h3>
+                <?php the_content();?>
             </aside>
 
         <?php endwhile; ?>
