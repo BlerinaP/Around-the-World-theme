@@ -29,6 +29,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('post-thumbnails');
     add_image_size('featuredTour', 730, 390, true); // Medium Thumbnail
     add_image_size('medium', 350, 250, true); // Medium Thumbnail
+    add_image_size('blog-images', 1280, 444, true); // Blog images
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
