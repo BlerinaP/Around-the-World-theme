@@ -228,6 +228,11 @@ div.photo:nth-child(even){
     transform: rotate(10deg);
     margin-top: -80px;
 }
+.post div.photo{
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
 .polaroid{
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0, .25);
     -moz-box-shadow: 0 3px 6px rgba(0,0,0, .25);
@@ -341,6 +346,79 @@ div.itinerary p{
 .gallery br{
     display: none;
 }
+/*Testimonials*/
+blockquote{
+	border-left: 20px solid #df7900;
+	padding: 5px 0 10px 10px;
+}
+.testimonial-list{
+	padding: 0;
+	list-style: none;
+}
+.testimonial-list li{
+	background-color: #fefaf5;
+	border-left: 1px solid #a8a8a8;
+	border-right: 1px solid #a8a8a8;
+	border-bottom: 1px solid #a8a8a8;
+}
+.testimonial-list li h3{
+	background-color: #df7900;
+	padding: 5px 20px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+.testimonial-list li .testimonial-content{
+	padding-left: 80px;
+	position: relative;
+	padding-right: 10px;
+}
+.testimonial-list li .testimonial-content > p:before{
+	content: '"';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 60px;
+	color: #616161;
+	font-size: 150px;
+	font-family: serif;
+	line-height: 0;
+}
+.testimonial-list li .from-testimonial p{
+	color: #000000;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 20px;
+	margin: 0 0 5px 0;
+	text-transform: uppercase;
+}
+/*Blog style*/
+article.post h3 a{
+	color: #df7900;
+	font-size: 28px;
+	font-size: 2.8rem;
+	font-weight: normal;
+}
+article.post a{
+	color: #df7900;
+	font-weight: bold;
+}
+article.post h3 {
+	margin-top: 0;
+}
+article.post .post-information{
+	text-align: right;
+	color: #5e5e5e;
+}
+article.post .post-information p{
+	margin-top: 0;
+}
+@media only screen and (min-width: 768px){
+	.testimonial-wrapper{
+		max-width: 60%;
+		margin: 0 auto;
+	}
+}
+
 /*GRID*/
 [class*='grid']{
     position: relative;
