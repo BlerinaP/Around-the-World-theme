@@ -105,6 +105,9 @@ function html5blank_header_scripts()
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
+
+        wp_register_script('bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array(), '4.2.12'); // bxslider
+        wp_enqueue_script('bxslider'); // Enqueue it!
     }
 }
 
@@ -128,6 +131,9 @@ function html5blank_styles()
 
     wp_register_style('fancyboxcss', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '1.0', 'all');
     wp_enqueue_style('fancyboxcss'); // Enqueue it!
+
+    wp_register_style('bxslidercss', get_template_directory_uri() . '/css/jquery.bxslider.css', array(), '1.0', 'all');
+    wp_enqueue_style('bxslidercss'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -229,7 +235,7 @@ function html5wp_pagination()
 // Custom Excerpts
 function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 {
-    return 20;
+    return 80;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
