@@ -468,6 +468,23 @@ article.post  p{
 	color: white;
 	float: right;
 }
+/*Front Page*/
+.bx-wrapper img {
+	margin: 0 auto;
+	width: 100%;
+}
+
+div.bx-wrapper{
+	border: none;
+}
+section.slider ul{
+	margin: 0;
+}
+section.slider .bx-viewport{
+	left:0;
+	box-shadow: none;
+	border: none;
+}
 
 /*GRID*/
 [class*='grid']{
