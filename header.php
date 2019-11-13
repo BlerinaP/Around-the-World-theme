@@ -46,15 +46,20 @@
                         <!-- /nav -->
                     </div><!--wrapper-->
                 </div><!--navcanvas-->
-                <?php if(is_home() && get_option('page_for_posts')){ ?>
+                <?php if(is_home() && get_option('page_for_posts')): ?>
                     <?php $featured = wp_get_attachment_image_src( get_post_thumbnail_id(get_option('page_for_posts')), 'full'); ?>
                     <?php $featured = $featured[0];?>
                     <div class="featuredImage" style="background-image:url(<?php echo $featured ?>);">   </div>
-                <?php } else { ?>
+                    <?php elseif (is_front_page()): ?>
+                    <section class="slider">
+                        <?php //functions.php:12 ?>
+                        <?php do_action('slider_index'); ?>
+                    </section>
+                <?php  else : ?>
                     <?php $featured = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); ?>
                     <?php $featured = $featured[0];?>
                     <div class="featuredImage" style="background-image:url(<?php echo $featured ?>);">   </div>
-            <?php } ?>
+            <?php endif; ?>
 
 			</header>
 			<!-- /header -->

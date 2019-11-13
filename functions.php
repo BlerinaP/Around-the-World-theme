@@ -9,7 +9,25 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+function slider() {
+    $args = array(
+      'post_type' => 'slider',
+      'posts_per_page' => 5,
+      'order' => 'DESC',
+      'orderby' => 'date'
+    );
+    $slider = new WP_Query($args);
+    echo "<ul class='slider'>";
+    while($slider->have_posts()): $slider->the_post();
+    echo "<li>";
+        $link = get_field('link');
+        echo "<a href='$link'>";
+        the_post_thumbnail('slider');
+    echo "</li>";
+    endwhile; wp_reset_postdata();
+    echo "</ul>";
+}
+add_action('slider_index', 'slider');
 
 /*------------------------------------*\
 	Theme Support
@@ -31,6 +49,7 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 350, 250, true); // Medium Thumbnail
     add_image_size('blog-images', 1280, 444, true); // Blog images
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('slider', 1500, 500, true); //Slider
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     add_theme_support('custom-background', array(
