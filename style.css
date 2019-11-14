@@ -494,6 +494,9 @@ section.upcoming-tours h2{
 	padding: 0;
 	list-style: none;
 }
+.upcoming-tours ul li{
+	margin-bottom: 20px;
+}
 .upcoming-tours div.image{
 	position: relative;
 }
@@ -501,7 +504,7 @@ section.upcoming-tours h2{
 	position: absolute;
 	top: 11px;
 	width: 110px;
-	right: -1px;;
+	right: -13px;;
 }
 .upcoming-tours div.content-tours{
 	background-color: #df7900;
@@ -513,6 +516,12 @@ section.upcoming-tours h2{
 		padding: 10px 0;
 		margin-right: 10.5px;
 	}
+	.upcoming-tours div.image .more{
+		position: absolute;
+		top: 11px;
+		width: 110px;
+		right: -1px;;
+	}
 }
 .upcoming-tours div.content-tours h3,
 .upcoming-tours div.content-tours p,
@@ -521,8 +530,41 @@ section.upcoming-tours h2{
 	text-align: center;
 	margin: 0;
 }
+/*Latest blog entries*/
+.latest-entries ul{
+	padding: 0;
+	list-style: none;
+}
+.latest-entries ul li{
+	margin-bottom: 30px;
+}
+.latest-entries ul li h3{
+	font-size: 20px;
+	font-size: 2rem;
+	margin: 0;
+	color: #df7900;
+	font-weight: normal;
+}
+.latest-entries ul li p{
+	margin: 0;
+	font-size: 14px;
+	font-size: 1.4rem;
 
-/*GRID*/
+}
+.latest-entries ul li a.view-article{
+	background-color: #df7900;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 5px 15px;
+	color: white;
+	font-weight: bold;
+	display: block;
+	width: 40%;
+	margin-top: 12px;
+	border-radius: 10px;
+}
+
+	/*GRID*/
 [class*='grid']{
     position: relative;
     padding: 0 20px 0 0;
