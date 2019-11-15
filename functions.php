@@ -8,6 +8,10 @@
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
+/*Widgets*/
+if(file_exists(dirname(__FILE__) . '/inc/widgets.php')){
+    require_once dirname(__FILE__) . '/inc/widgets.php';
+}
 
 function slider() {
     $args = array(
@@ -85,6 +89,7 @@ if (function_exists('add_theme_support'))
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
     add_image_size('slider', 1500, 500, true); //Slider
     add_image_size('tourFront', 430, 300, true); //tourfront
+    add_image_size('thumb', 150, 100, true);
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     add_theme_support('custom-background', array(
@@ -191,6 +196,12 @@ function html5blank_styles()
 
     wp_register_style('bxslidercss', get_template_directory_uri() . '/css/jquery.bxslider.css', array(), '1.0', 'all');
     wp_enqueue_style('bxslidercss'); // Enqueue it!
+
+    wp_register_style('pontanoFont','https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap',array(), '1.0', 'all');
+    wp_enqueue_style('pontanoFont');
+
+    wp_register_style('lato','https://fonts.googleapis.com/css?family=Lato:400,700&display=swap',array(), '1.0', 'all');
+    wp_enqueue_style('lato');
 }
 
 // Register HTML5 Blank Navigation
@@ -259,7 +270,7 @@ if (function_exists('register_sidebar'))
         'name' => __('Widget Area 2', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
         'id' => 'widget-area-2',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'before_widget' => '<div id="%1$s" class="%2$s grid1-4">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -322,7 +333,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Continue Reading', 'html5blank') . '</a>';
 }
 
 // Remove Admin bar
