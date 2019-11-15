@@ -146,10 +146,13 @@ h1, h2, h3, h4, h5{
 .nav ul li{
 	padding: 12px 0;
 	text-align: center;
+	transition: all .3s ease-in;
 }
+.nav ul li:hover,
 .nav ul li.current_page_item{
 	background-color: #df7900;
 }
+
 .nav ul li a{
 	font-size: 14px;
 	font-size: 1.4rem;
