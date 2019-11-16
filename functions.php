@@ -11,14 +11,20 @@
 function admin_styles(){
 
  wp_enqueue_style('logincss',get_template_directory_uri() . '/login/css/loginStyles.css', false);
-
  wp_enqueue_style('vegascss',get_template_directory_uri() . '/login/css/vegas.min.css', false);
 
  wp_enqueue_script('jquery');
 
  wp_enqueue_script('loginjs',get_template_directory_uri() . '/login/js/login.js', array('jquery'), '1.0.0', true);
-
  wp_enqueue_script('vegasjs',get_template_directory_uri() . '/login/js/vegas.min.js', array('jquery'), '2.4.4', true);
+
+ wp_localize_script(
+    'loginjs',
+     'login_images',
+     array(
+        "theme_path" => get_template_directory_uri() . '/login/img'
+     )
+ );
 }
 add_action('login_enqueue_scripts','admin_styles',10);
 

@@ -1,3 +1,3 @@
 jQuery(function($){
-   alert("it works");
+   console.log(login_images.theme_path);
 });
