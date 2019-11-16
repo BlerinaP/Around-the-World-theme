@@ -50,7 +50,7 @@
                     <?php $featured = wp_get_attachment_image_src( get_post_thumbnail_id(get_option('page_for_posts')), 'full'); ?>
                     <?php $featured = $featured[0];?>
                     <div class="featuredImage" style="background-image:url(<?php echo $featured ?>);">   </div>
-                    <?php elseif (is_front_page()): ?>
+                <?php elseif (is_front_page()): ?>
                     <section class="slider">
                         <?php //functions.php:12 ?>
                         <?php do_action('slider_index'); ?>
@@ -63,5 +63,10 @@
 
 			</header>
 			<!-- /header -->
+         <div class="wrapper">
+
+             <div class="search-form clear">
+                 <?php get_template_part('searchform'); ?>
+             </div>
 
 
