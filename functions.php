@@ -170,6 +170,9 @@ function html5blank_header_scripts()
 
         wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.js', array(), '3.0.2'); // picturefill
         wp_enqueue_script('picturefill'); // Enqueue it!
+
+        wp_register_script('slicknav', get_template_directory_uri() . '/js/jquery.slicknav.min.js', array(), '1.0.10'); // picturefill
+        wp_enqueue_script('slicknav'); // Enqueue it!
     }
 }
 
@@ -196,6 +199,9 @@ function html5blank_styles()
 
     wp_register_style('bxslidercss', get_template_directory_uri() . '/css/jquery.bxslider.css', array(), '1.0', 'all');
     wp_enqueue_style('bxslidercss'); // Enqueue it!
+
+    wp_register_style('slicknavcss', get_template_directory_uri() . '/css/slicknav.min.css', array(), '1.0.10', 'all');
+    wp_enqueue_style('slicknavcss'); // Enqueue it!
 
     wp_register_style('pontanoFont','https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap',array(), '1.0', 'all');
     wp_enqueue_style('pontanoFont');
