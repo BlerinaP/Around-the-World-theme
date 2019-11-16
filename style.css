@@ -96,8 +96,9 @@ h1, h2,h3, h4, h5 {
 }
 .header .navcanvas {
 	background-color: rgba(0,0,0, .7);
+
 }
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px){
 	.header .navcanvas {
 		position: absolute;
 		left:0;
@@ -128,29 +129,47 @@ h1, h2,h3, h4, h5 {
 }
 /* nav */
 .nav {
-	display: none;
+display: none;
 }
-.nav ul {
+.nav ul,
+ul.slicknav_nav{
 	list-style: none;
 	padding:0;
 	margin:0;
 }
-.nav ul li{
+.nav ul li,
+ul.slicknav_nav li{
 	padding: 12px 0;
 	text-align: center;
 }
-.nav ul li.current_page_item {
+.nav ul li.current_page_item,
+ul.slicknav_nav li:hover,
+ul.slicknav_nav li.current_page_item {
 	background-color: #df7900;
 }
-.nav ul li a{
+ul.slicknav_nav a:hover{
+	background-color: transparent!important;
+	color: #FFFFFF!important;
+}
+.nav ul li a,
+ul.slicknav_nav li a{
 	font-size: 14px;
 	font-size: 1.4rem;
 	font-weight: bold;
 	color: #fff;
 	text-transform: uppercase;
 }
+.slicknav_btn{
+	background-color: #df7900!important;
+}
+.slicknav_menu .slicknav_menutxt {
+	text-shadow: none!important;
+}
 
 @media only screen and (min-width: 768px) {
+	div.slicknav_menu{
+		display: none;
+	}
 	.nav {
 		height: 73px;
 		width: 60%;
@@ -489,28 +508,28 @@ blockquote {
 
 }
 /** Blog **/
-article.post h3 {
+article h3{
 	margin-top: 0;
 }
-article.post h3 a{
+article h3 a{
 	color: #e1800d;
 	font-size: 28px;
 	font-size:2.8rem;
 	font-weight: normal;
 }
-article.post a {
+article a {
 	color: #e1800d;
 	font-weight: bold;
 }
-article.post .post-information {
+article.post-information {
 	color:#5e5e5e;
 }
 @media only screen and (min-width: 768px)  {
-	article.post .post-information {
+	article .post-information {
 		text-align: right;
 	}
 }
-article.post p{
+article p{
 	margin-top: 0;
 }
 .share-buttons p {
@@ -564,6 +583,9 @@ article.post p{
 
 /***** Front Page *+/
 /* Slider */
+.bx-wrapper {
+	margin-bottom: 5px!important;
+}
 .bx-wrapper img {
 	margin: 0 auto;
 	width: 100%;
